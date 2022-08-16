@@ -1,6 +1,6 @@
 {
-  "name": "survey-ui",
-  "version": "1.0.0",
+  "name": "survey-ui-vue3",
+  "version": "1.0.1",
   "description": "",
   "module": "es/index.js",
   "main": "lib/index.js",
@@ -18,8 +18,5 @@
   ],
   "author": "kajian",
   "license": "MIT",
-  "typings": "lib/index.d.ts",
-  "dependencies": {
-    "@survey-ui/utils": "workspace:^1.0.0"
-  }
+  "typings": "lib/index.d.ts"
 }
