@@ -1,9 +1,10 @@
-import { defineComponent, h } from 'vue'
+import SButton from './Button'
+import SFCButton from './SFCButton.vue'
+import JSXButton from './JSXButton'
 
-export default defineComponent({
-  name: 'SButton',
-
-  render () {
-    return h('button', null, "SButton")
-  }
-})
+// 导出Button组件
+export default {
+  SButton,
+  SFCButton,
+  JSXButton
+}
