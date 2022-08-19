@@ -1,14 +1,14 @@
 import { App } from 'vue'
 import Button from './button/index'
 import Input  from './input/index'
-import radio from './radio/index'
 import Radio from './radio/index'
+import Checkbox from './checkbox/index'
 const { SButton, SFCButton, JSXButton } = Button
 const { SInput } = Input
-const { SRadio } = Radio
-console.log(Radio)
+const { SRadio, SRadioInput } = Radio
+const { SCheckbox } = Checkbox
 
-export { SButton, SFCButton, JSXButton, SInput, SRadio }
+export { SButton, SFCButton, JSXButton, SInput, SRadio, SRadioInput, SCheckbox }
 
 // 组测组件
 function installComp (app, comPlist) {
@@ -21,6 +21,6 @@ function installComp (app, comPlist) {
 
 export default {
   install (app:App): void {
-    installComp(app, [Button, Input, Radio])
+    installComp(app, [Button, Input, Radio, Checkbox])
   }
 }

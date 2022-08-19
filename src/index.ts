@@ -42,12 +42,21 @@ createApp({
     <SInput v-model:value="text"></SInput>
   </div>
   <div style="width: 350px">
-    <SRadio label="123"></SRadio>
+    <SRadio v-model="radio" value="1">1</SRadio>
+    <SRadio v-model="radio" value="2">2</SRadio>
+    <SRadio v-model="radio" value="3">3</SRadio>
+  </div>
+  <div style="width: 350px">
+    <SRadioInput></SRadioInput>
+  </div>
+  <div style="width: 350px">
+    <SCheckbox>123</SCheckbox>
   </div>
   `,
   data() {
     return {
-      text: '123'
+      text: '123',
+      radio: 1
     }
   },
 }).use(SurveyUI).mount('#app')

@@ -1,55 +1,30 @@
 <template>
-<label class="survey-radio-wrapper">
-    <span class="survey-radio">
+<label class="survey-checkbox-wrapper">
+    <span class="survey-checkbox">
       <input 
-      class="survey-radio-input" 
-      type="radio"
-      v-model="modelValue"
-      :value="value"
-      @change="handleChange"
+      class="survey-checkbox-input" 
+      type="checkbox"
        />
-      <span class="survey-radio-inner"></span>
+      <span class="survey-checkbox-inner"></span>
     </span>
-    <span class="survey-radio-label">
+    <span class="survey-checkbox-label">
       <slot>
         {{value}}
       </slot>
     </span>
 </label>
 </template>
-<script lang='ts' setup>
+<script setup lang="ts">
 import { ref } from 'vue'
-
-const props = defineProps({
-  disabled: Boolean,
-  value: {
-    type: [String, Number, Boolean],
-    default: ''
-  },
-  modelValue: {
-    type: [String, Number, Boolean],
-    default: ''
-  },
-  name: {
-    type: String,
-    default: ''
-  }
-})
-
-const emit = defineEmits(['change', 'update:modelValue'])
-
-const handleChange = (e) => {
-  emit('change', e.target.value)
-  emit('update:modelValue', e.target.value)
-}
 </script>
+
 <script lang="ts">
 export default {
-  name: 'SRadio'
+  name: 'SCheckbox'
 }
 </script>
 <style lang="less">
-.survey-radio-wrapper {
+.survey-checkbox-wrapper {
   position: relative;
   display: inline-flex;
   align-items: baseline;
@@ -57,7 +32,7 @@ export default {
   font-size: 14px;
   font-variant: tabular-nums;
   font-feature-settings: "tnum";
-  .survey-radio {
+  .survey-checkbox {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -72,14 +47,14 @@ export default {
     display: inline-block;
     outline: none;
     cursor: pointer;
-    input[type="radio"] {
+    input[type="checkbox"] {
       width: 16px;
       height: 16px;
       margin: 0;
       cursor: pointer;
     }
   }
-  .survey-radio-label {
+  .survey-checkbox-label {
     padding: 0 8px;
   }
 }
