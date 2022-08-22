@@ -4,6 +4,9 @@
       <input 
       class="survey-checkbox-input" 
       type="checkbox"
+      v-model="modelValue"
+      :value="value"
+      @change="handleChange"
        />
       <span class="survey-checkbox-inner"></span>
     </span>
@@ -16,6 +19,30 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
+
+const props = defineProps({
+  disabled: Boolean,
+  value: {
+    type: [String, Number, Boolean],
+    default: ''
+  },
+  modelValue: {
+    type: [String, Number, Boolean],
+    default: ''
+  },
+  name: {
+    type: String,
+    default: ''
+  }
+})
+
+const emit = defineEmits(['change', 'update:modelValue'])
+
+const handleChange = (e) => {
+  emit('change', e.target.value)
+  emit('update:modelValue', e.target.value)
+}
+
 </script>
 
 <script lang="ts">
@@ -32,6 +59,7 @@ export default {
   font-size: 14px;
   font-variant: tabular-nums;
   font-feature-settings: "tnum";
+  cursor: pointer;
   .survey-checkbox {
     box-sizing: border-box;
     margin: 0;

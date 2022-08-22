@@ -39,7 +39,7 @@ createApp({
     <SButton color="red" round plain icon="delete"></SButton>
   </div>
   <div style="width: 350px">
-    <SInput v-model:value="text"></SInput>
+    <SInput v-model:value="text" border></SInput>
   </div>
   <div style="width: 350px">
     <SRadio v-model="radio" value="1">1</SRadio>
@@ -47,10 +47,19 @@ createApp({
     <SRadio v-model="radio" value="3">3</SRadio>
   </div>
   <div style="width: 350px">
-    <SRadioInput></SRadioInput>
+    <SRadioInput border></SRadioInput>
   </div>
   <div style="width: 350px">
     <SCheckbox>123</SCheckbox>
+    <SCheckbox>456</SCheckbox>
+    <SCheckbox>789</SCheckbox>
+  </div>
+  <div style="width: 350px">
+    <SCheckboxInput border></SCheckboxInput>
+  </div>
+  <div style="width: 350px">
+    <SubjectTitle></SubjectTitle>
+    <SubjectBox active></SubjectBox>
   </div>
   `,
   data() {

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['survey-title-wrapper', `survey-edit-question`]" :style="{width: `${width}px`}">
+  <div :class="['survey-title-wrapper', `survey-edit-question`, border?'show-border':'']" :style="{width: `${width}px`}">
     <div class="survey-quill">
       <div class="survey-q-container">
         <div
@@ -40,6 +40,9 @@ export default defineComponent({
     model: {
       type: String,
       default: 'edit'
+    },
+    border: {
+      type: Boolean
     }
   },
   setup(props, context) {
@@ -62,6 +65,9 @@ export default defineComponent({
 })
 </script>
 <style lang="less">
+.show-border {
+  border: 1px dashed #aaaaaa
+}
 .survey-q-editor {
   box-sizing: border-box;
   line-height: 1.42;
@@ -74,8 +80,7 @@ export default defineComponent({
   text-align: left;
   white-space: pre-wrap;
   word-wrap: break-word;
-  // border: 1px solid transparent;
-  border: 1px dashed #aaaaaa;
+  border: 1px solid transparent;
   span {
     font-size: 0 !important;
   }

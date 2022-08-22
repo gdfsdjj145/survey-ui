@@ -57,6 +57,7 @@ export default {
   font-size: 14px;
   font-variant: tabular-nums;
   font-feature-settings: "tnum";
+  cursor: pointer;
   .survey-radio {
     box-sizing: border-box;
     margin: 0;

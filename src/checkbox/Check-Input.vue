@@ -1,14 +1,14 @@
 <template>
-  <div class="survey-radio-input-wrapper">
-    <SRadio :value="value" :model-value="modelValue">
-    </SRadio>
+  <div class="survey-check-input-wrapper">
+    <SCheckbox :value="value" :model-value="modelValue">
+    </SCheckbox>
     <SInput v-model="title" :width="width" :border="border"></SInput>
   </div>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
 import  SInput  from '../input/Input.vue'
-import  SRadio from './Radio.vue'
+import  SCheckbox from './Checkbox.vue'
 
 const props = defineProps({
   disabled: Boolean,
@@ -30,12 +30,12 @@ const props = defineProps({
 </script>
 <script lang="ts">
 export default {
-  name: 'SRadioInput'
+  name: 'SCheckboxInput'
 }
 </script>
 
 <style lang="less">
-.survey-radio-input-wrapper {
+.survey-check-input-wrapper {
   display: flex;
   flex-direction: row;
   justify-items: center;
