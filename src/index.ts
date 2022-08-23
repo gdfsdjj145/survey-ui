@@ -39,7 +39,7 @@ createApp({
     <SButton color="red" round plain icon="delete"></SButton>
   </div>
   <div style="width: 350px">
-    <SInput v-model:value="text" border></SInput>
+    <SInput v-model="text" border></SInput>
   </div>
   <div style="width: 350px">
     <SRadio v-model="radio" value="1">1</SRadio>
@@ -58,7 +58,7 @@ createApp({
     <SCheckboxInput border></SCheckboxInput>
   </div>
   <div style="width: 350px">
-    <SubjectTitle></SubjectTitle>
+    <SubjectTitle title="123"></SubjectTitle>
     <SubjectBox active></SubjectBox>
   </div>
   `,

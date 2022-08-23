@@ -10,7 +10,7 @@
           :contenteditable="model === 'edit'"
           @focus="handleFocus"
           @blur="handleTitleChange"
-          v-html="value"
+          v-html="modelValue"
         />
       </div>
     </div>
@@ -21,7 +21,7 @@ import { defineComponent, ref } from 'vue'
 export default defineComponent({
   name: 'SInput',
   props: {
-    value: {
+    modelValue: {
       type: String,
       default: ''
     },
@@ -72,11 +72,11 @@ export default defineComponent({
   box-sizing: border-box;
   line-height: 1.42;
   height: 100%;
+  padding: 5px 0;
   outline: none;
   overflow-y: auto;
   tab-size: 4;
   -moz-tab-size: 4;
-  padding: 5px 8px;
   text-align: left;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -88,6 +88,7 @@ export default defineComponent({
 .survey-edit-question {
   .survey-q-editor {
     &:focus {
+      padding: 5px 8px;
       outline: 0px;
       border: 1px solid rgb(24, 144, 255) !important;
     }

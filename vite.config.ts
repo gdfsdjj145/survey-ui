@@ -1,10 +1,28 @@
 /// <reference types="vitest">
 import { defineConfig } from 'vite'
+import * as path from 'path'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import Unocss from './config/unocss'
 
+const alias = {
+  '@': path.resolve(__dirname, './src'),
+  'vue$': 'vue/dist/vue.runtime.esm-bundler.js',
+}
+
+const rollupOptions = {
+  external: ['vue', 'vue-router'],
+  output: {
+    globals: {
+      vue: 'Vue'
+    }
+  }
+}
+
 export default defineConfig({
+  resolve: {
+    alias,
+  },
   test: {
     globals: true,
     environment: 'happy-dom',
@@ -13,15 +31,11 @@ export default defineConfig({
     }
   },
   build: {
-    rollupOptions: {
-      external: ['vue', 'vue-router'],
-      output: {
-        globals: {
-          vue: 'Vue'
-        }
-      }
-    },
-    minify: false,
+    rollupOptions,
+    minify: 'terser',
+    sourcemap: true,
+    brotliSize: true,
+    cssCodeSplit: true,
     lib: {
       entry: './src/entry.ts',
       name: 'SurveyUI',

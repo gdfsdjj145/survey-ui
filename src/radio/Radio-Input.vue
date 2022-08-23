@@ -40,5 +40,8 @@ export default {
   flex-direction: row;
   justify-items: center;
   align-items: center;
+  .survey-radio-label {
+    padding: 0 !important;
+  }
 }
 </style>

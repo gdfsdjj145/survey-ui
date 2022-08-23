@@ -1,11 +1,15 @@
-`# SurveyUI`
+# SurveyUI
 
-# Button 按钮
+一个用于快速构建问卷的组件库
 
- <div style="margin-bottom:20px;">
-    <SButton color="blue">主要按钮</SButton>
-    <SButton color="green">绿色按钮</SButton>
-    <SButton color="gray">灰色按钮</SButton>
-    <SButton color="yellow">黄色按钮</SButton>
-    <SButton color="red">红色按钮</SButton>
-  </div>
+🔧 提供多个可快速构建一个问卷页面的组件
+
+📦 基于`Vite + Vue3 + Ts`技术栈
+
+## Install
+
+...
+
+<script setup>
+import Radio from '../src/radio/Radio.vue'
+</script>
