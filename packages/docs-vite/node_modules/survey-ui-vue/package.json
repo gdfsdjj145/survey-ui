@@ -1,0 +1,45 @@
+{
+	"name": "survey-ui-vue",
+	"version": "0.1.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "vite",
+		"docs:dev": "vitepress dev docs",
+		"docs:build": "vitepress build docs",
+		"docs:serve": "vitepress serve docs",
+		"test": "vitest",
+		"lint": "eslint --fix --ext .ts,.vue src",
+		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.vue\"",
+    "build": "vite build"
+	},
+	"devDependencies": {
+		"@iconify-json/ic": "^1.1.9",
+		"@typescript-eslint/eslint-plugin": "^5.33.1",
+		"@typescript-eslint/parser": "^5.33.1",
+		"@vitejs/plugin-vue": "^3.0.3",
+		"@vitejs/plugin-vue-jsx": "2.0.0",
+		"@vue/eslint-config-prettier": "^7.0.0",
+		"@vue/test-utils": "2.0.2",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^8.22.0",
+		"eslint-formatter-pretty": "^4.1.0",
+		"eslint-plugin-json": "^3.1.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-vue": "^9.3.0",
+		"esno": "^0.16.3",
+		"happy-dom": "6.0.4",
+		"prettier": "^2.7.1",
+		"terser": "^5.14.2",
+		"unocss": "0.45.6",
+		"vite": "3.0.7",
+		"vitepress": "1.0.0-alpha.10",
+		"vitepress-theme-demoblock": "^1.4.2",
+		"vitest": "0.21.1"
+	},
+	"dependencies": {
+		"less": "^4.1.3",
+		"survey-ui": "^1.0.0",
+		"vue": "3.2.37"
+	}
+}

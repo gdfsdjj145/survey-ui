@@ -1,0 +1,21 @@
+<h1>Demo IFFE</h1>
+<div id="app"></div>
+<link rel="stylesheet" href="../../dist/assets/entry.59674ef8.css">
+<script src="../../node_modules/vue/dist/vue.global.js"></script>
+<script src="../../dist/survey-ui.iife.js"></script>
+<script>
+    console.log('111')
+    const { createApp } = Vue
+    console.log('vue', Vue)
+    console.log('SurveyUI', SurveyUI)
+    createApp({
+        template: `
+        <div style="margin-bottom:20px;">
+            <SRadio color="blue">主要按钮</SRadio>
+            <SRadio color="green">绿色按钮</SRadio>
+            <SRadio color="gray">灰色按钮</SRadio>
+            <SRadio color="yellow">黄色按钮</SRadio>
+            <SRadio color="red">红色按钮</SRadio>
+        </div>
+    `}).use(SurveyUI.default).mount('#app')
+</script>
