@@ -41,5 +41,11 @@
 		"less": "^4.1.3",
 		"survey-ui": "^1.0.0",
 		"vue": "3.2.37"
-	}
+	},
+	"keywords": [
+		"vue3",
+		"vite"
+	],
+	"license": "ISC",
+	"author": "kajian"
 }
