@@ -3,5 +3,6 @@ dist
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+packages/docs-vite/**
 
 git config core.ignorecase false
