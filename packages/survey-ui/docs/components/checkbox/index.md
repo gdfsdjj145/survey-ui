@@ -10,7 +10,7 @@
 
 ```vue
 <template>
-  <SRadio>Radio</SRadio>
+  <SCheckbox>Checkbox</SCheckbox>
 </template>
 ```
 
@@ -20,27 +20,16 @@
 
 ```vue
 <template>
-  <SRadio v-model="radio" value="A">A</SRadio>
-  <SRadio v-model="radio" value="B">B</SRadio>
-  <SRadio v-model="radio" value="C">C</SRadio>
-  <SRadio v-model="radio" value="D">D</SRadio>
+  <SCheckbox v-model="check1" value="A">A</SCheckbox>
+  <SCheckbox v-model="check2" value="B">B</SCheckbox>
+  <SCheckbox v-model="check3" value="C">C</SCheckbox>
+  <SCheckbox v-model="check4" value="D">D</SCheckbox>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
-const radio = ref('A');
+const check1 = ref(false);
+const check2 = ref(false);
+const check3 = ref(false);
+const check4 = ref(false);
 </script>
 ```
-
-:::
-
-单选输入框
-
-:::demo 用于设计单选项时，方便修改选项文本，通常配合 SInput 一起使用。
-
-```vue
-<template>
-  <SRadioInput title="Radio"></SRadioInput>
-</template>
-```
-
-:::

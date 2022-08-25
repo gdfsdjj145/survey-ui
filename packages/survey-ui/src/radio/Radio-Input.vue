@@ -1,8 +1,9 @@
 <template>
   <div class="survey-radio-input-wrapper">
-    <SRadio :value="value" :model-value="modelValue">
+    <SRadio :value="value" :model-value="modelValue" @change="handleChange">
+      {{''}}
     </SRadio>
-    <SInput v-model="title" :width="width" :border="border"></SInput>
+    <SInput v-model="label" :width="width" :border="border" :mode="mode" @change="handleTitleChange"></SInput>
   </div>
 </template>
 <script setup lang="ts">
@@ -20,13 +21,25 @@ const props = defineProps({
     type: [String, Number, Boolean],
     default: ''
   },
-  title: String,
+  label: String,
   width: {
     type: Number,
     default: 250
   },
-  border: Boolean
+  border: Boolean,
+  mode: {
+    type: String,
+    default: 'normal'
+  }
 })
+const emit = defineEmits(['change', 'update:modelValue', 'update:label'])
+const handleChange = (v) => {
+  emit('change', v)
+  emit('update:modelValue', v)
+}
+const handleTitleChange = (v) => {
+  emit('update:label', v)
+}
 </script>
 <script lang="ts">
 export default {

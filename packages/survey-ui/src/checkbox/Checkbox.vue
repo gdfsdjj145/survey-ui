@@ -4,8 +4,8 @@
       <input 
       class="survey-checkbox-input" 
       type="checkbox"
-      v-model="modelValue"
-      :value="value"
+      :value="modelValue"
+      :checked="modelValue"
       @change="handleChange"
        />
       <span class="survey-checkbox-inner"></span>
@@ -18,7 +18,7 @@
 </label>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const props = defineProps({
   disabled: Boolean,
@@ -28,7 +28,7 @@ const props = defineProps({
   },
   modelValue: {
     type: [String, Number, Boolean],
-    default: ''
+    default: false
   },
   name: {
     type: String,
@@ -37,10 +37,11 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['change', 'update:modelValue'])
+const isChecked = ref(false)
 
 const handleChange = (e) => {
-  emit('change', e.target.value)
-  emit('update:modelValue', e.target.value)
+  emit('change', e.target.checked)
+  emit('update:modelValue', e.target.checked)
 }
 
 </script>

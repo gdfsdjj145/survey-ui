@@ -1,5 +1,5 @@
 <template>
-  <div :class="['survey-title-wrapper', `survey-edit-question`]" :style="{width: `${width}px`}">
+  <div :class="['survey-title-wrapper', `survey-${mode}-question`]" :style="{width: `${width}px`}">
     <div class="survey-quill">
       <div class="survey-q-container">
         <div
@@ -7,7 +7,7 @@
           :tabindex="0"
           class="survey-q-editor"
           :style="{fontSize: `${fontSize}px !important`}"
-          :contenteditable="model === 'edit'"
+          :contenteditable="mode === 'edit'"
           @focus="handleFocus"
           @blur="handleTitleChange"
           v-html="modelValue"
@@ -37,7 +37,7 @@ export default defineComponent({
       type: String,
       default: ''
     },
-    model: {
+    mode: {
       type: String,
       default: 'edit'
     },
@@ -47,6 +47,7 @@ export default defineComponent({
   },
   setup(props, context) {
     const handleTitleChange = (e) => {
+      context.emit('change', e.target.innerHTML)
       context.emit('update:value', e.target.innerHTML)
       window.removeEventListener('paste', pasteFn)
     }
@@ -58,6 +59,7 @@ export default defineComponent({
       const paste = (e.clipboardData || window.clipboardData).getData('text/plain')
       var newNode = document.createElement('span')
       newNode.innerHTML = paste
+      console.log(window.getSelection().getRangeAt(0), newNode)
       window.getSelection().getRangeAt(0).insertNode(newNode)
     }
     return { handleTitleChange, handleFocus }
@@ -78,9 +80,6 @@ export default defineComponent({
   white-space: pre-wrap;
   word-wrap: break-word;
   border: 1px solid transparent;
-  span {
-    font-size: 0 !important;
-  }
 }
 .survey-edit-question {
   .survey-q-editor {

@@ -1,7 +1,7 @@
 <template>
   <div class="survey-subject-title">
-    <span class="survey-subject-index">{{ index }}.</span>
-    <SInput class="survey-title" :font-size="18" ></SInput>
+    <span class="survey-subject-index">{{ Number(index)?`${index}.`: '' }}</span>
+    <SInput class="survey-title" :font-size="18" v-model="title" :mode="mode"></SInput>
   </div>
 </template>
 <script setup>
@@ -10,9 +10,13 @@ import SInput from '../input/Input.vue'
 
 defineProps({
   index: {
+    type: [String, Number]
+  },
+  title: {
     type: [String, Number],
-    default: 1
-  }
+    default: ''
+  },
+  mode: String
 })
 </script>
 <script>

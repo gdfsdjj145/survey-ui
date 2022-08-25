@@ -10,8 +10,12 @@
 
 ```vue
 <template>
-  <SRadio>Radio</SRadio>
+  <SRadio v-model="radio" value="Radio">Radio</SRadio>
 </template>
+<script lang="ts" setup>
+import { ref } from 'vue';
+const radio = ref('');
+</script>
 ```
 
 :::
@@ -30,17 +34,3 @@ import { ref } from 'vue';
 const radio = ref('A');
 </script>
 ```
-
-:::
-
-单选输入框
-
-:::demo 用于设计单选项时，方便修改选项文本，通常配合 SInput 一起使用。
-
-```vue
-<template>
-  <SRadioInput title="Radio"></SRadioInput>
-</template>
-```
-
-:::

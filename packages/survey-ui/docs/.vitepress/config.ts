@@ -27,7 +27,7 @@ const sidebar = {
           text: '布局',
           items: [
             {
-              text: 'Subject 题目布局',
+              text: 'SubjectBox 题目布局',
               link: '/components/subject/'
             },
           ]
@@ -45,18 +45,27 @@ const sidebar = {
           text: '选择题',
           items: [
             {
-              text: 'RadioInput 单选框',
+              text: 'RadioInput 单选输入框',
               link: '/components/radio-input/'
             },
             {
-              text: 'CheckboxInput 复选框',
+              text: 'CheckboxInput 复选输入框',
               link: '/components/checkbox-input/'
             },
-            {
-              text: 'Matrix 矩阵框',
-              link: '/components/matrix/'
-            }
+            // {
+            //   text: 'Matrix 矩阵框',
+            //   link: '/components/matrix/'
+            // }
           ]
+        }
+      ]
+    },
+    {
+      text: '展示',
+      items: [
+        {
+          text: 'Demo 1',
+          link: '/demo/demo1.md'
         }
       ]
     }
@@ -75,6 +84,7 @@ const markdown = {
   }
 }
 const config = {
+  title: 'SurveyUI',
   markdown,
   themeConfig: {
     sidebar,
